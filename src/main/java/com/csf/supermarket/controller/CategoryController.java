@@ -30,7 +30,7 @@ public class CategoryController {
 	CategoryService cS;  
 
 	//creating a get mapping that retrieves all the Category detail from the database   
-	@GetMapping("/category")
+	@GetMapping("/Category")
 	private List<Category> getAllCategories()   
 	{  
 		return cS.getAllCategories();  

@@ -13,7 +13,6 @@ import com.csf.supermarket.repository.CategoryRepository;
 
 //defining the business logic  
 @Service 
-
 public class CategoryService {
 
 	@Autowired  

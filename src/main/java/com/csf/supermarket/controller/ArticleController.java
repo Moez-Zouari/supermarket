@@ -27,42 +27,42 @@ public class ArticleController {
 
 	//autowire the ArticleService class  
 	@Autowired  
-	ArticleService as;  
+	ArticleService arS;  
 
 	//creating a get mapping that retrieves all the Article detail from the database   
-	@GetMapping("/article")
+	@GetMapping("/Article")
 	private List<Article> getAllArticles()   
 	{  
-		return as.getAllArticles();  
+		return arS.getAllArticles();  
 	}  
 
 	//creating a get mapping that retrieves the detail of a specific article  
-	@GetMapping("/article/{id}")  
+	@GetMapping("/Article/{id}")  
 	private Article getArticle(@PathVariable("id") int id)   
 	{  
-		return as.getArticlesById(id);  
+		return arS.getArticlesById(id);  
 	}  
 
 	//creating a delete mapping that deletes a specified article  
-	@DeleteMapping("/article/{id}")  
+	@DeleteMapping("/Article/{id}")  
 	private void deleteArticle(@PathVariable("id") int id)   
 	{  
-		as.delete(id);  
+		arS.delete(id);  
 	} 
 
 	//create new article
-	@PostMapping("/article")  
+	@PostMapping("/Article")  
 	private int saveArticle(@RequestBody Article a)   
 	{  
-		as.saveOrUpdate(a);  
+		arS.saveOrUpdate(a);  
 		return a.getId();  
 	} 
 
 	//creating put mapping that updates the article detail
-	@PutMapping("/article")  
+	@PutMapping("/Article")  
 	private Article update(@RequestBody  Article a)   
 	{  
-		as.saveOrUpdate(a);  
+		arS.saveOrUpdate(a);  
 		return a;  
 	}  
 }
